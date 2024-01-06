@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <img src = '/img'>
+    <img src = './cookie.png'>
     <button id = 'btn'>Login</button>
 
     <script>
@@ -16,7 +16,10 @@
             btn.style.display = "none";
 
         btn.addEventListener("click", e => {
-            fetch("/login", {"method":"POST"}).then(a=>a.text()).then(console.log)
+            //fetch("/login", {"method":"POST"}).then(a=>a.text()).then(console.log)
+            const cookie = "user=atul; samesite=strict; secure";
+            document.cookie = cookie;
+            alert("Cookie set");
         })
     </script>
 </body>
